@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  flask-app:
+    build: .
+    ports:
+      - "5001:5000"  # host_port:container_port
+    environment:
+      DB_HOST: "192.168.210.148"  # IP of the PostgreSQL server (your host or another machine)
+      DB_PORT: "54322"
+      DB_NAME: "afat_database"   # Use your actual DB name
+      DB_USER: "postgres"
+      DB_PASS: "test"
+    depends_on: []
